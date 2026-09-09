@@ -1,16 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Tarek Almodóvar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-    <h1>Hola Mundo</h1>
-    <h1>Almodovar Tufiño Tarek</h1>
-    <h3>Im a Computer Engineer studet at UNAM, I really like topics in hardware,programming an data science.
-        talking about my hoobies, I like videogames like limbo, minecraft, an mario party. I love art and make some paints in all
-        the differents styles, I also like the music of the 80s and 90s, and watch series like the office, breaking bad and the big bang theory.
-    </h3>
+
+  <!-- NAVBAR BLUR -->
+  <header class="header-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">Almodóvar Tarek</a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Homepage</a></li>
+          <li><a href="about.html" class="nav-link active">About Me</a></li>
+          <li><a href="cv.html" class="nav-link">CV</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="animate-fade-in">
+
+    <!-- SECCIÓN 1: ACADEMIC BACKGROUND -->
+    <section class="apple-section">
+      <div class="apple-card">
+        <div class="card-text">
+          <span class="section-tag">Education</span>
+          <h2>Academic Background</h2>
+          <p>
+            I am currently studying at the Faculty of Engineering of the UNAM. I focus on understanding system architecture at both hardware and software levels.
+          </p>
+        </div>
+        <div class="card-image-wrapper">
+          <img src="assets/img/Biblio.JPG" alt="Academic Background">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: AREAS OF INTEREST (Efecto Pop-Up al hacer scroll) -->
+    <section class="apple-section pop-up-section">
+      <div class="apple-card">
+        <div class="card-image-wrapper">
+          <img src="assets/img/Robot.jpeg" alt="Areas of Interest">
+        </div>
+        <div class="card-text">
+          <span class="section-tag">Passions & Focus</span>
+          <h2>Areas of Interest</h2>
+          <p>
+            I'm a Computer Engineering student at UNAM. I am really passionate about hardware, programming, and data science.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: MY HOBBIES -->
+    <section class="apple-section pop-up-section">
+      <div class="apple-card">
+        <div class="card-text">
+          <span class="section-tag">Personal Life</span>
+          <h2>My Hobbies</h2>
+          <p>
+            When it comes to my hobbies, I enjoy video games like <em>Limbo</em>, <em>Minecraft</em>, and  combination of classics. I also love art and creating paintings across different styles, listening to 80s and 90s music, and watching series like <em>The Office</em>, <em>Breaking Bad</em>, and <em>The Big Bang Theory</em>.
+          </p>
+          <!-- Espacio listo para agregar más detalles -->
+          <p style="margin-top: 1rem; color: var(--text-muted);">
+            <!-- Escribe aquí contenido adicional sobre tus pasatiempos -->
+          </p>
+        </div>
+        <div class="card-image-wrapper">
+          <img src="assets/img/InterestPain.jpeg" alt="My Hobbies">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Almodóvar Tarek. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
