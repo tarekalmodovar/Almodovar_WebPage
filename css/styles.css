@@ -261,3 +261,283 @@ body {
   color: #ffffff;
   transform: translateY(-2px);
 }
+
+/* ==========================================
+   SECCIÓN DE CV (ESTILO EXECUTIVE)
+   ========================================== */
+.cv-header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.cv-header-actions h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.download-btn {
+  margin-top: 1rem;
+}
+/* ==========================================
+   SECCIÓN DE CV (CENTRADAS Y COMPACTAS)
+   ========================================== */
+.cv-card {
+  display: flex !important;
+  flex-direction: column;
+  gap: 1.5rem;                  /* Reduce la separación excesiva */
+  padding: 3rem;
+  max-width: 900px;             /* Ancho óptimo para lectura */
+  margin: 0 auto;               /* Centra la tarjeta horizontalmente */
+  grid-template-columns: none;
+}
+
+.cv-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cv-header-text h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Botón estilizado estilo Apple con icono */
+.cv-download-btn {
+  background-color: transparent; 
+  color: #1d1d1f;             /* Texto negro */
+  border: 1.5px solid #1d1d1f; /* Borde fino negro */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 980px;         /* Botón totalmente redondeado estilo Apple */
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.2);
+}
+.cv-download-btn:hover {
+  background-color: #1d1d1f;  /* Invierte a fondo negro al pasar el cursor */
+  color: #ffffff;             /* Texto e icono cambian a blanco */
+}
+
+.cv-section {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.25rem;     /* Reduce el espacio inferior entre bloques */
+}
+
+.cv-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cv-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.cv-contact-item {
+  font-size: 0.98rem;
+}
+
+.cv-label {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.cv-link {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.cv-link:hover {
+  text-decoration: underline;
+}
+
+.cv-text {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.cv-item {
+  margin-bottom: 1rem;
+}
+
+.cv-item:last-child {
+  margin-bottom: 0;
+}
+
+.cv-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cv-item-header h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.cv-date {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.cv-subtitle {
+  font-size: 0.92rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.skill-category h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.skill-category p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.cv-list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin-top: 0.35rem;
+}
+
+.cv-list li {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 0.3rem;
+}
+
+/* ==========================================
+   SCHEDULE TABLE (APPLE MINIMALIST STYLE)
+   ========================================== */
+.schedule-card {
+  display: flex !important;
+  flex-direction: column;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+}
+
+.schedule-header {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.schedule-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.schedule-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* Scroll horizontal suave en pantallas pequeñas */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.apple-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.apple-table th {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+}
+
+.apple-table td {
+  padding: 0.85rem 0.6rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.apple-table tr:last-child td {
+  border-bottom: none;
+}
+
+.time-col {
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.015);
+}
+
+.empty-cell {
+  color: #d1d5db;
+  font-weight: 300;
+}
+
+/* ETIQUETAS PASTELES PARA CADA MATERIA (TAGS) */
+.tag {
+  display: inline-block;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Paleta de colores pastel por categoría */
+.tag-blue { background-color: #dbeafe; color: #1e40af; }
+.tag-purple { background-color: #f3e8ff; color: #6b21a8; }
+.tag-amber { background-color: #fef3c7; color: #92400e; }
+.tag-emerald { background-color: #d1fae5; color: #065f46; }
+.tag-rose { background-color: #ffe4e6; color: #9f1239; }
+.tag-orange { background-color: #ffedd5; color: #9a3412; }
+.tag-indigo { background-color: #e0e7ff; color: #3730a3; }

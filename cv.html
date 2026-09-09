@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV | Almodóvar Tarek</title>
+  <title>CV | Tarek Almodóvar</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR BLUR -->
   <header class="header-navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-brand">Almodóvar Tarek</a>
@@ -18,39 +18,120 @@
           <li><a href="index.html" class="nav-link">Homepage</a></li>
           <li><a href="about.html" class="nav-link">About Me</a></li>
           <li><a href="cv.html" class="nav-link active">CV</a></li>
-          <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+          <li><a href="schedule.html" class="nav-link">Schedule</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="main-container animate-fade-in">
-    <section class="page-header">
-      <h1>Curriculum Vitae</h1>
-      <a href="assets/pdf/CV.pdf" download class="btn btn-primary" style="margin-top: 1rem;">Download PDF</a>
-    </section>
+  <!-- CONTENIDO PRINCIPAL CV -->
+  <main class="apple-section animate-fade-in">
+    <div class="apple-card cv-card pop-up-section">
 
-    <section class="timeline">
-      <div class="timeline-item card">
-        <span class="timeline-date">Education</span>
-        <h2>Ingineering</h2>
-        <p class="institution">Faculty of Engineering, UNAM</p>
-        <p>Focus on system development, digital electronics, and computer science.</p>
+      <!-- ENCABEZADO Y BOTÓN DE DESCARGA -->
+      <div class="cv-header-container">
+        <div class="cv-header-text">
+          <span class="section-tag">Curriculum Vitae</span>
+          <h1>Tarek Almodóvar</h1>
+        </div>
+        <a href="assets/pdf/CV_Almodovar_Tarek.pdf" download class="btn btn-primary cv-download-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download PDF
+        </a>
       </div>
-      <div class="timeline-item card">
-        <span class="timeline-date">Experience</span>
-        <h2>Projects</h2>
-        <p><strong>Project 1:</strong> Development of a control system for a mobile robot.</p>
-        <p><strong>Project 2:</strong> Implementation of a digital circuit for signal processing.</p>
-      </div>
-      <div class="timeline-item card">
-        <span class="timeline-date">Technical Skills</span>
-        <h2>Technologies & Tools</h2>
-        <p><strong>Languages:</strong> C, Python, VHDL, HTML, CSS, JavaScript</p>
-        <p><strong>Tools:</strong> Git, VS Code, Quartus, Intel DE10-Lite, PowerBI, LaTeX </p>
-      </div>
-    </section>
+
+      <!-- CONTACT INFO -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Contact Info</h2>
+        <div class="cv-contact-item">
+          <span class="cv-label">Email:</span>
+          <a href="mailto:tarektufi@gmail.com" class="cv-link">tarektufi@gmail.com</a>
+        </div>
+      </section>
+
+      <!-- SUMMARY -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Summary</h2>
+        <p class="cv-text">
+          Undergraduate engineering student with a strong interest in software development, databases, and process automation.
+        </p>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Education</h2>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h3>National Autonomous University of Mexico (UNAM)</h3>
+            <span class="cv-date">Expected Graduation: June 2027</span>
+          </div>
+          <p class="cv-subtitle">B.S. in Computer Engineering</p>
+        </div>
+      </section>
+
+      <!-- TECHNICAL SKILLS -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Languages</h4>
+            <p>Python, C/C++, Oracle SQL, MySQL, HTML, CSS, VHDL</p>
+          </div>
+          <div class="skill-category">
+            <h4>Technologies & Tools</h4>
+            <p>LaTeX, Git, VS Code, ESP32, Arduino IDE, AI Tools, Microsoft Office</p>
+          </div>
+          <div class="skill-category">
+            <h4>Areas of Expertise</h4>
+            <p>Software Development, Algorithms, Data Analysis, Embedded Systems</p>
+          </div>
+          <div class="skill-category">
+            <h4>Languages & Soft Skills</h4>
+            <p>English (C1 Advanced) • Teamwork, Problem-solving, Adaptability</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE & PROJECTS -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Experience & Projects</h2>
+        
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h3>Instituto de Fisiología Celular — UNAM</h3>
+            <span class="cv-date">Currently Working</span>
+          </div>
+          <p class="cv-subtitle">Real-Time Neural Analysis Interface</p>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h3>Python AI Model</h3>
+          </div>
+          <ul class="cv-list">
+            <li>Collaborated in a team to design and develop an AI chatbot model using search algorithms (BFS and DFS).</li>
+            <li>Improved a BFS Algorithm optimizing subway travels by 40% in travel time efficiency.</li>
+            <li>Integrated Google Weather API for real-time response capability and modeled the CDMX Subway Network using tree data structures.</li>
+          </ul>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h3>Autonomous Mini Sumo Robot (C++)</h3>
+          </div>
+          <ul class="cv-list">
+            <li>Designed and programmed an autonomous robot using ESP32, Arduino IDE, and L298N motor driver.</li>
+            <li>Implemented obstacle detection with ultrasonic/infrared sensors and control logic for edge detection and tracking.</li>
+          </ul>
+        </div>
+
+      </section>
+
+    </div>
   </main>
 
   <!-- FOOTER -->
