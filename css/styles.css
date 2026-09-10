@@ -520,9 +520,22 @@ body {
   }
 }
 
-/* Deshabilita el filtro blur explícitamente en tarjetas de la Homepage */
+/* Estado inicial por defecto para animaciones de scroll */
+.pop-up-section {
+  opacity: 0.1;
+  filter: blur(12px);
+  -webkit-filter: blur(12px);
+  transform: translateY(30px);
+  transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, filter, transform;
+}
+
+/* Forzar lectura clara solo en la tarjeta de la Homepage */
 .hero-card,
 .tech-card {
   filter: none !important;
   -webkit-filter: none !important;
 }
+
