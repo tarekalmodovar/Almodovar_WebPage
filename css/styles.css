@@ -20,7 +20,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Desplazamiento suave entre secciones */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -41,7 +41,7 @@ body {
   height: var(--nav-height);
   background-color: var(--nav-bg);
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px); /* Soporte para Safari / macOS */
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
   display: flex;
@@ -84,10 +84,9 @@ body {
 }
 
 /* ==========================================
-   SECCIONES CON MENOR ESPACIO VERTICAL estilo apple
+   SECCIONES Y TARJETAS ESTILO APPLE
    ========================================== */
 .apple-section {
-  /* Reducimos el alto mínimo para eliminar espacio muerto */
   min-height: auto; 
   padding: 3rem 2rem; 
   display: flex;
@@ -95,20 +94,6 @@ body {
   justify-content: center;
 }
 
-/* ==========================================
-   EFECTO DINÁMICO DE BLUR AL HACER SCROLL
-   ========================================== */
-.pop-up-section {
-  opacity: 0.1;
-  filter: blur(12px);
-  -webkit-filter: blur(12px);
-  transform: translateY(30px);
-  /* Transición suave para el movimiento y la claridad */
-  transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-              filter 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-              transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: opacity, filter, transform;
-}
 .apple-card {
   max-width: 1000px;
   width: 100%;
@@ -161,7 +146,51 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Imágenes dentro de las tarjetas */
+/* ==========================================
+   EFECTO DINÁMICO DE BLUR OPTIMIZADO (JS COMPATIBLE)
+   ========================================== */
+.pop-up-section {
+  /* Alineado con la configuración de js/main.js para máxima legibilidad */
+  opacity: 0.4;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+  transform: translateY(15px);
+  transition: opacity 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, filter, transform;
+}
+
+.pop-up-section.is-visible {
+  opacity: 1;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  transform: translateY(0);
+}
+
+/* ==========================================
+   HOMEPAGE & HERO CARD
+   ========================================== */
+.hero-card {
+  margin-top: 1rem;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile-image-wrapper {
+  height: 380px;
+}
+
 .card-image-wrapper {
   width: 100%;
   height: 350px;
@@ -178,58 +207,14 @@ body {
 }
 
 .apple-card:hover .card-image-wrapper img {
-  transform: scale(1.03); /* Efecto zoom suave */
+  transform: scale(1.03);
 }
 
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
-  .apple-card {
-    grid-template-columns: 1fr;
-    padding: 2rem;
-    gap: 2rem;
-  }
-  .card-image-wrapper {
-    height: 250px;
-  }
-}
-
-/* ==========================================
-   ANIMACIÓN POP-UP AL HACER SCROLL
-   ========================================== */
-.pop-up-section {
-  opacity: 0;
-  transform: translateY(60px) scale(0.95);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-/* Estado activo disparado por JavaScript */
-.pop-up-section.is-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* Estilos específicos para la tarjeta de la Homepage */
-.hero-card {
-  margin-top: 2rem;
-}
-
-.hero-description {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: var(--text-muted);
-  margin-top: 0.75rem;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Ajuste específico para la proporción de la foto de perfil */
-.profile-image-wrapper {
-  height: 380px;
+/* Tarjetas informativas de un solo bloque (IPv6 / SRv6) */
+.tech-card {
+  grid-template-columns: 1fr !important;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* ==========================================
@@ -263,34 +248,15 @@ body {
 }
 
 /* ==========================================
-   SECCIÓN DE CV (ESTILO EXECUTIVE)
-   ========================================== */
-.cv-header-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-}
-
-.cv-header-actions h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.download-btn {
-  margin-top: 1rem;
-}
-/* ==========================================
    SECCIÓN DE CV (CENTRADAS Y COMPACTAS)
    ========================================== */
 .cv-card {
   display: flex !important;
   flex-direction: column;
-  gap: 1.5rem;                  /* Reduce la separación excesiva */
+  gap: 1.5rem;
   padding: 3rem;
-  max-width: 900px;             /* Ancho óptimo para lectura */
-  margin: 0 auto;               /* Centra la tarjeta horizontalmente */
+  max-width: 900px;
+  margin: 0 auto;
   grid-template-columns: none;
 }
 
@@ -310,28 +276,29 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* Botón estilizado estilo Apple con icono */
 .cv-download-btn {
   background-color: transparent; 
-  color: #1d1d1f;             /* Texto negro */
-  border: 1.5px solid #1d1d1f; /* Borde fino negro */
+  color: #1d1d1f;
+  border: 1.5px solid #1d1d1f;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.65rem 1.25rem;
-  border-radius: 980px;         /* Botón totalmente redondeado estilo Apple */
+  border-radius: 980px;
   font-size: 0.9rem;
   font-weight: 500;
   box-shadow: 0 2px 8px rgba(0, 113, 227, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .cv-download-btn:hover {
-  background-color: #1d1d1f;  /* Invierte a fondo negro al pasar el cursor */
-  color: #ffffff;             /* Texto e icono cambian a blanco */
+  background-color: #1d1d1f;
+  color: #ffffff;
 }
 
 .cv-section {
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 1.25rem;     /* Reduce el espacio inferior entre bloques */
+  padding-bottom: 1.25rem;
 }
 
 .cv-section:last-child {
@@ -466,7 +433,6 @@ body {
   margin-top: 0.25rem;
 }
 
-/* Scroll horizontal suave en pantallas pequeñas */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -516,7 +482,6 @@ body {
   font-weight: 300;
 }
 
-/* ETIQUETAS PASTELES PARA CADA MATERIA (TAGS) */
 .tag {
   display: inline-block;
   padding: 0.45rem 0.8rem;
@@ -533,7 +498,6 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* Paleta de colores pastel por categoría */
 .tag-blue { background-color: #dbeafe; color: #1e40af; }
 .tag-purple { background-color: #f3e8ff; color: #6b21a8; }
 .tag-amber { background-color: #fef3c7; color: #92400e; }
@@ -541,3 +505,24 @@ body {
 .tag-rose { background-color: #ffe4e6; color: #9f1239; }
 .tag-orange { background-color: #ffedd5; color: #9a3412; }
 .tag-indigo { background-color: #e0e7ff; color: #3730a3; }
+
+/* ==========================================
+   RESPONSIVIDAD PANTALLAS PEQUEÑAS
+   ========================================== */
+@media (max-width: 768px) {
+  .apple-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .card-image-wrapper {
+    height: 250px;
+  }
+}
+
+/* Deshabilita el filtro blur explícitamente en tarjetas de la Homepage */
+.hero-card,
+.tech-card {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
